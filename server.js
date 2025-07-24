@@ -3,6 +3,8 @@ import dotenv from "dotenv";
 import db from "./config/connection.js";
 import cors from "cors";
 import usersRouter from "./routes/users.js";
+import postsRouter from "./routes/posts.js";
+//import imageusers from "./routes/imageusers.js"
 
 
 dotenv.config();
@@ -16,6 +18,8 @@ app.use(express.json());
 
 //routes
 app.use("/api/users", usersRouter);
+app.use("/api/posts", postsRouter);
+//app.use("/api/imageusers", imageusers);
 
 
 db.once("open", () => {
